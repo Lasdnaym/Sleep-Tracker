@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/display_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:text="display_date"/>
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"/>
+        <TextView
+            android:id="@+id/display_avg_sleep"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="display_avg_sleep"/>
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"/>
+        <TextView
+            android:id="@+id/display_recommendation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:text="display_recommendations"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="33.3"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_bedtime_24"
+            android:onClick="recommendationsToGetSleepInfo"/>
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="33.3"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_show_chart_24"
+            android:onClick="recommendationsToDisplayStats"/>
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="33.3"
+            android:background="@color/white"
+            android:src="@android:drawable/ic_menu_search"
+            android:tint="#000000" />
+
+    </LinearLayout>
+
+</RelativeLayout>

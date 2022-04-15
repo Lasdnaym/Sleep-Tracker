@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_display_custom_stats">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="25.0">
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:id="@+id/start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:inputType="date"
+                    android:hint="DDMMYYYY"
+                    app:mask="##/##/####" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:text=" to "
+                    android:textSize="20dp"/>
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:id="@+id/end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:inputType="date"
+                    android:hint="DDMMYYYY"
+                    app:mask="##/##/####"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/get_date_bounds"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_weight="75.0"
+                android:text="Go"
+                android:onClick="getStats"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="Sleep Quality"
+            android:textSize="20dp"/>
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/sleep_quality_graph"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <LinearLayout
+            android:id="@+id/display_stat_averages"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <TextView
+                    android:id="@+id/average_sleep_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="50.0"
+                    android:textSize="30dp"/>
+                <TextView
+                    android:id="@+id/average_wake_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="50.0"
+                    android:textSize="30dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="50.0"
+                    android:text="Average sleep time"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="50.0"
+                    android:text="Average wake time"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <TextView
+                    android:id="@+id/average_hours_sleep"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="50.0"
+                    android:textSize="30dp"/>
+                <TextView
+                    android:id="@+id/average_sleep_quality"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="50.0"
+                    android:textSize="30dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="50.0"
+                    android:text="Average hours of sleep"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="50.0"
+                    android:text="Average sleep quality"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="33.3"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_bedtime_24"
+            android:onClick="displayStatsToGetSleepInfo"/>
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="33.3"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_show_chart_24" />
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="33.3"
+            android:background="@color/white"
+            android:onClick="displayStatsToRecommendations"
+            android:src="@android:drawable/ic_menu_search"
+            android:tint="#000000" />
+    </LinearLayout>
+
+</RelativeLayout>
